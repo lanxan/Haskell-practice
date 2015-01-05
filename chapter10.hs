@@ -25,7 +25,11 @@ length' (x:xs) = 1 + (length' xs)
 sum' :: [Int] -> Int
 sum' [] = 0
 sum' (x:xs) = x + (sum' xs)
-    
+
+--fold, a think stage record
+fold :: (Int -> Int -> Int) -> [Int] -> Int
+fold fn (x:[]) = x
+fold fn (x:xs) = fn x (fold fn xs)
 
 
 --print
@@ -33,3 +37,4 @@ main = do
     putStrLn $ show $ map' (+5) [1,2,3,4] -- [6,7,8,9]
     putStrLn $ show $ length' [1,2,3,4] -- 4
     putStrLn $ show $ sum' [1,2,3,4] -- 10
+    putStrLn $ show $ fold (-) [1,2,3,4] -- (+) => 10, (*) => 24, (-) => -2
