@@ -1,7 +1,7 @@
 Haskell-practice
 ================
 
-一點CodeData 教學的功課練習
+學習心得與練習
 
 
 Reference :
